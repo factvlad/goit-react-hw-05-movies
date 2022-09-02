@@ -1,0 +1,32 @@
+.movieList {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  list-style: none;
+  margin: 10px auto;
+  max-width: 60vw;
+  min-width: 50vw;
+  padding: 10px;
+}
+.imgWrapper {
+  display: flex;
+  height: 600px;
+  -webkit-box-align: center;
+  align-items: center;
+  place-content: center;
+  -webkit-box-pack: center;
+  flex-direction: column;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: rgb(123 212 235) 0px 0px 10px 1px;
+  transition: transform var(--animation-duration) var(--timing-function);
+}
+
+.title {
+  display: flex;
+  color: rgb(222, 20, 185);
+}
+
+a {
+  text-decoration: none;
+}

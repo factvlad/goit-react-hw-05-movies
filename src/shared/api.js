@@ -1,20 +1,36 @@
-const axios = require('axios').default;
-const apiKey = '28723731-5c15bd07d095f3f0e05de01ba';
+import axios from 'axios';
 
+axios.defaults.baseURL = 'https://api.themoviedb.org/3';
+axios.defaults.params = {
+  api_key: '9408f4ad1863a9d272018e8be0447604',
+};
 
-const getImages = async (searchQuery, page) => {
-  const { data } = await axios.get(`https://pixabay.com/api/`, {
-    params: {
-      key: apiKey,
-      page,
-      q: searchQuery,
-      orientation: 'horizontal',
-      safesearch: `true`,
-      per_page: 12,
-    },
-  });
- console.log(data)
+export const getMostPopularMovies = async () => {
+  const { data } = await axios.get('/trending/movie/week');
   return data;
 };
 
-export default getImages;
+export const getMovieForId = async id => {
+  const { data } = await axios.get(`/movie/${id}&language=en-US`);
+  return data;
+};
+
+export const getCast = async id => {
+  const { data } = await axios.get(`/movie/${id}/credits`);
+  return data;
+};
+
+export const getReviews = async id => {
+  const { data } = await axios.get(`/movie/${id}/reviews`);
+  return data;
+};
+
+export const getMoviesQuery = async (name, page) => {
+  const { data } = await axios.get('/search/movie', {
+    params: {
+      query: name,
+      page: page,
+    },
+  });
+  return data;
+};
