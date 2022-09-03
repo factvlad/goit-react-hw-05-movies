@@ -15,10 +15,9 @@ const MoviesList = ({ popularMovies }) => {
                     ? `https://image.tmdb.org/t/p/original${el.poster_path}`
                     : `https://img.freepik.com/free-vector/glitch-error-404-page_23-2148105404.jpg?w=2000`
                 }
-                alt=""
-                width={ 350 }
+                alt="img"
               />
-            <p className={s.title}>{ el.title }</p>
+              <p className={ s.title }>{ el.title }</p>
             </div>
           </Link>
         </li>

@@ -5,26 +5,34 @@
   list-style: none;
   margin: 10px auto;
   max-width: 60vw;
-  min-width: 50vw;
+  min-height: 100vh;
   padding: 10px;
 }
 .imgWrapper {
   display: flex;
-  height: 600px;
   -webkit-box-align: center;
   align-items: center;
   place-content: center;
   -webkit-box-pack: center;
   flex-direction: column;
-  padding: 5px;
+  padding: 8px;
   border-radius: 10px;
   box-shadow: rgb(123 212 235) 0px 0px 10px 1px;
   transition: transform var(--animation-duration) var(--timing-function);
+  &:hover {
+    box-shadow: rgb(222 20 185) 0px 0px 13px 3px;
+    transform: scale(1.03);
+  }
+  & img {
+    height: 500px;
+  }
 }
 
 .title {
   display: flex;
   color: rgb(222, 20, 185);
+  padding: 10px;
+  margin: 0;
 }
 
 a {
