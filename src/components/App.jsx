@@ -6,10 +6,11 @@ import { lazy } from 'react';
 const Layout = lazy(() => import('./Layout/Layout'))
 const MovieDetails = lazy(() => import('./MovieDetails/MovieDetails'))
 const NotFound = lazy(() => import('./NotFound/NotFound'))
-const Movies = lazy(() => import('../pages/Movies/Movies'))
-const Home = lazy(() => import('../pages/Home/Home'))
-const Cast = lazy(() => import('../pages/Cast/Cast'))
-const Reviews = lazy(() => import('../pages/Reviews/Reviews'))
+const Movies = lazy(() => import('../Pages/Movies/Movies'))
+const Home = lazy(() => import('../Pages/Home/Home'))
+const Cast = lazy(() => import('../Pages/Cast/Cast'))
+const Reviews = lazy(() => import('../Pages/Reviews/Reviews'))
+
 
 const App = () => {
   return (
