@@ -3,6 +3,8 @@ import { NavLink, useSearchParams } from 'react-router-dom';
 import { Searchbar } from 'components';
 import { getMoviesQuery } from "shared/api"
 import s from "./Movies.module.scss"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Movies = () => {
   const [searchResult, setSearchResult] = useState([]);
@@ -12,6 +14,18 @@ const Movies = () => {
   useEffect(() => {
     const fetchSearch = async () => {
       await getMoviesQuery(searchValue).then(({ results }) => {
+        if (results.length === 0) {
+          toast.error('🦄 Sorry use another name', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          })
+          return;
+        }
         setSearchResult(results);
       });
     };
@@ -23,7 +37,6 @@ const Movies = () => {
   const submitValue = data => {
     setSearchParams({ query: data });
   };
-
 
   const renderMovies = searchResult.map(
     ({ poster_path, original_title, vote_average, id }) => (
@@ -48,7 +61,8 @@ const Movies = () => {
   return (
     <section>
       <Searchbar submitValue={ submitValue } />
-      { searchResult && searchResult.length > 0 ? <ul className={ s.movieList }> { renderMovies }</ul> : <div className={s.finder}></div> }
+      { searchResult && searchResult.length > 0 ? <ul className={ s.movieList }> { renderMovies }</ul> : <div className={ s.finder }></div> }
+      <ToastContainer />
     </section>
   );
 };
