@@ -11,7 +11,6 @@ const Home = lazy(() => import('../pages/Home/Home'))
 const Cast = lazy(() => import('../pages/Cast/Cast'))
 const Reviews = lazy(() => import('../pages/Reviews/Reviews'))
 
-
 const App = () => {
   return (
     <div>
