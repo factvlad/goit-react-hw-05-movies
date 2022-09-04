@@ -2,6 +2,8 @@ import { Loader } from "components";
 import { Suspense } from 'react';
 import Routering from "./Routering/Routering";
 
+
+
 const App = () => {
   return (
     <div>
