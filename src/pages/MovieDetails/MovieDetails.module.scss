@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgb(123 212 235) 0px 0px 10px 1px;
+}
+
+.details {
+  display: flex;
+  padding-bottom: 20px;
+  color: rgb(123, 212, 235);
+}
+
+.details_poster {
+  margin-right: 40px;
+  max-width: 250px;
+}
+.list {
+  display: flex;
+  list-style: none;
+  margin-right: 30px;
+  align-items: flex-end;
+  gap: 20px;
+  & a {
+    box-shadow: rgb(123 212 235) 0px 0px 10px 1px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+.list_Link {
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+}
+
+.active {
+  color: rgb(222 20 185);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+h2,
+h3,
+h4,
+p {
+  padding: 0;
+  margin: 0;
+}

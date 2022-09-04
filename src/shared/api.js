@@ -5,13 +5,19 @@ axios.defaults.params = {
   api_key: '9408f4ad1863a9d272018e8be0447604',
 };
 
-export const getMostPopularMovies = async () => {
-  const { data } = await axios.get('/trending/movie/week');
+export const getMostPopularMovies = async (page) => {
+  const { data } = await axios.get('/trending/movie/week', {
+    params: {
+      page,
+    },
+  });
   return data;
 };
 
 export const getMovieForId = async id => {
-  const { data } = await axios.get(`/movie/${id}&language=en-US`);
+  const { data } = await axios.get(`/movie/${id}&language=en-US`,
+  );
+
   return data;
 };
 

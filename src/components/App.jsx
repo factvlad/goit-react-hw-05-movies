@@ -1,17 +1,16 @@
-import { Routes, Route, } from "react-router-dom";
-import { Layout, Home, Movies, NotFound } from "components";
+import { Loader } from "components";
+import { Suspense } from 'react';
+import Routering from "./Routering/Routering";
+
 
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={ <Layout /> }>
-        <Route index element={ <Home /> } />
-        <Route path="/movies" element={ <Movies /> } />
-        <Route path="*" element={ <NotFound /> } />
-      </Route>
-    </Routes>
-
+    <div>
+      <Suspense fallback={ <Loader /> }>
+        <Routering />
+      </Suspense>
+    </div>
   );
 }
 

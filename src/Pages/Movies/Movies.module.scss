@@ -1,0 +1,56 @@
+.movieList {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  list-style: none;
+  margin: 0 auto;
+  max-width: 80vw;
+  min-height: 30vh;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+.imgWrapper {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  place-content: center;
+  -webkit-box-pack: center;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: rgb(123 212 235) 0px 0px 10px 1px;
+  transition: transform var(--animation-duration) var(--timing-function);
+  &:hover {
+    box-shadow: rgb(222 20 185) 0px 0px 13px 3px;
+    transform: scale(1.03);
+  }
+  & img {
+    height: 300px;
+    box-shadow: rgb(123 212 235) 0px 0px 2px 1px;
+  }
+}
+.title {
+  display: flex;
+  color: rgb(222, 20, 185);
+  padding: 10px 0 15px;
+  text-align: center;
+  margin: 0;
+  height: 95px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.finder {
+  margin: 0 auto;
+  width: 600px;
+  height: 450px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-size: 600px;
+  background-repeat: no-repeat;
+  background-image: url('https://i.giphy.com/media/25RIHlF7bXOFhJOhfn/giphy.webp');
+  border-radius: 10px;
+  box-shadow: rgb(123 212 235) 0px 0px 10px 1px;
+}
